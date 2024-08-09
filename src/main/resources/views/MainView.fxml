@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Cylinder?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.youcefmei.controllers.MainController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccc;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="397.0" layoutY="36.0" style="-fx-background-color: #fff;" text="Hanoi Tower">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #ccc;">
+         <children>
+            <GridPane layoutX="46.0" layoutY="24.0" prefHeight="465.0" prefWidth="788.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.3" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.3" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.3" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Cylinder fx:id="beam1" height="350.0" radius="10.0" />
+                  <Cylinder fx:id="beam2" height="350.0" radius="10.0" GridPane.columnIndex="1" />
+                  <Cylinder fx:id="beam3" height="350.0" radius="10.0" GridPane.columnIndex="2" />
+                  <VBox fx:id="col1" alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" />
+                  <VBox fx:id="col2" alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                  <VBox fx:id="col3" alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+            <VBox layoutX="-3.0" layoutY="489.0" prefHeight="86.0" prefWidth="907.0">
+               <children>
+                  <Rectangle fx:id="socle" arcHeight="5.0" arcWidth="5.0" fill="#2b2f27" height="45.0" stroke="BLACK" strokeType="INSIDE" width="904.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Nombre d'étages:">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                        <ComboBox id="comboFloor" fx:id="comboFloorNb" onAction="#handleFloorNB" prefWidth="150.0" promptText="3">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <Button mnemonicParsing="false" text="Resolve">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</VBox>
